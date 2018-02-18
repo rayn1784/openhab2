@@ -1,0 +1,42 @@
+Group   gHome                            "My House"              
+Group   gR_Bedroom                       "Ryan's Bedroom"        (gHome)
+
+Group   gTemperature "Temperature"
+Group   gHumidity   "Humditiy"
+
+Group   gWeatherInfo                     "Weather Information"   
+Group   gWeatherInfo_Current             "Current Weather Conditions"    (gWeatherInfo)
+Group   gWeatherInfo_ForecastToday       "Today's Weather Forecast"      (gWeatherInfo)
+
+// Ryan's Bedroom
+Number Bedroom_Temperature "Temperature [%.1f °F]" <temperature> (gR_Bedroom, gTemperature) {channel="mysensors:temperature:f7d1827e:temperature_3_1:temp"}
+Number Bedroom_Humidity "Humidity [%.1f %%]" <humidity> (gR_Bedroom, gHumidity) {channel="mysensors:humidity:f7d1827e:humidity_3_0:hum"}
+
+// Wunderground Current Conditions
+String CurrentConditions "Current Conditions" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#conditions"}
+Number CurrentTemperature "Current Temperature [%.1f °F]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#temperature"}
+Number CurrentRelativeHumidity "Current Relative Humidity [%.1f %%]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#relativeHumidity"}
+String CurrentWindDirection "Current Wind Direction" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windDirection"}
+Number CurrentWindSpeed "Current Wind Speed [%1.0f MPH]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windSpeed"}
+Number CurrentWindGust "Current Wind Gust [%1.0f MPH]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windGust"}
+Number CurrentPressure "Current pressure" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#pressure"}
+Number CurrentFeelingTemperature "Current Feeling Temperature [%.1f °F]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#feelingTemperature"}
+Number CurrentVisibility "Current Visibility" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#visibility"}
+Number CurrentPrecipitationDay "Current Precipitation Today [%.01f inches]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#precipitationDay"}
+Image CurrentIcon "Current icon" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#icon"}
+
+// Wunderground Today's Forecast
+String ForecastTodayConditions "Conditions" (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#conditions"}
+DateTime CivilDawnStart "Sunrise [%1$tH:%1$tM]" <sun> (gWeatherInfo_ForecastToday) {channel="astro:sun:11348b84:civilDawn#start"}
+Number ForecastTodayMinTemperature "Min Temperature [%.1f °F]" <temperature> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#minTemperature"}
+Number ForecastTodayMaxTemperature "Max Temperature [%.1f °F]" <temperature> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#maxTemperature"}
+Number ForecastTodayRelativeHumidity "Relative Humidity [%.1f %%]" <humidity> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#relativeHumidity"}
+Number ForecastTodayProbaPrecipitation "Precipitation Chance [%1.0f %%]" <rain> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#probaPrecipitation"}
+Number ForecastTodayPrecipitationDay "Expected Rainfall [%.01f inches]" <rain> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#precipitationDay"}
+Number ForecastTodayAverageWindSpeed "Average Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#averageWindSpeed"}
+Number ForecastTodayMaxWindSpeed "Max Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#maxWindSpeed"}
+DateTime CivilDuskStart "Sunset [%1$tH:%1$tM]" <sun> (gWeatherInfo_ForecastToday) {channel="astro:sun:11348b84:civilDusk#start"}
+
+
+
+

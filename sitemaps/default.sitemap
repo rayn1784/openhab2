@@ -1,0 +1,30 @@
+
+sitemap default label="My Home" {
+    Frame label="Broken Arrow, OK 74011" icon="garden" {
+        Default item=CurrentConditions label="Current Conditions" 
+        Default item=CurrentTemperature label="Temperature [%.1f °F]" icon="temperature"
+        Default item=CurrentFeelingTemperature label="Feels like [%.1f °F]" icon="temperature"
+        Default item=CurrentRelativeHumidity label="Relative Humidity [%.1f %%]" icon="humidity"
+        Default item=CurrentWindSpeed label="Wind Speed [%1.0f MPH]" icon="wind"
+        Default item=CurrentPrecipitationDay label="Rain Fall Today [%.01f inches]" icon="rain"
+        Group item=gWeatherInfo_ForecastToday label="Weather Forecast for Today" icon="sun_clouds"
+    }    
+    
+    Frame label="Ryan's Bedroom" icon="bedroom" {
+        Default item=Bedroom_Temperature label="Temperature [%.1f °F]" icon="temperature"
+        Default item=Bedroom_Humidity label="Humidity [%.1f %%]" icon="humidity"
+        Switch item=BedroomLight_ColorTemperature label="Bedroom Light" icon="light"
+    } 
+    Frame label="Today's Forecast" {
+        Default item=WeatherInformation_ForecastToday_MaximumTemperature label="Forecasted High Temp [%1.0f °F]" 
+        Default item=WeatherInformation_ForecastToday_MinimumTemperature label="Forecasted Low Temp [%1.0f °F]"
+        Default item=WeatherInformation_ForecastToday_PrecipitationProbability label="Precipitation Chance [%1.0f %%]"
+        Default item=WeatherInformation_ForecastToday_RainFallDay label="Forecasted Rain Fall [%.01f inches]"
+        Default item=AstroSunData_CivilDusk_StartTime label="Sunset [%1$tH:%1$tM]"
+    }
+    Frame label="House Presence Detection" {
+        Switch item=DeanetteSPhone_Online label="Deanette Phone Online"
+        Switch item=DickrPhone_Online label="Ryan Phone Online" 
+    }
+}
+
