@@ -1,16 +1,7 @@
-Group   gHome                            "My House"              
-Group   gR_Bedroom                       "Ryan's Bedroom"        (gHome)
-
-Group   gTemperature "Temperature"
-Group   gHumidity   "Humditiy"
-
+// Weather Groups
 Group   gWeatherInfo                     "Weather Information"   
 Group   gWeatherInfo_Current             "Current Weather Conditions"    (gWeatherInfo)
 Group   gWeatherInfo_ForecastToday       "Today's Weather Forecast"      (gWeatherInfo)
-
-// Ryan's Bedroom
-Number Bedroom_Temperature "Temperature [%.1f °F]" <temperature> (gR_Bedroom, gTemperature) {channel="mysensors:temperature:f7d1827e:temperature_3_1:temp"}
-Number Bedroom_Humidity "Humidity [%.1f %%]" <humidity> (gR_Bedroom, gHumidity) {channel="mysensors:humidity:f7d1827e:humidity_3_0:hum"}
 
 // Wunderground Current Conditions
 String CurrentConditions "Current Conditions" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#conditions"}
@@ -36,7 +27,3 @@ Number ForecastTodayPrecipitationDay "Expected Rainfall [%.01f inches]" <rain> (
 Number ForecastTodayAverageWindSpeed "Average Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#averageWindSpeed"}
 Number ForecastTodayMaxWindSpeed "Max Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#maxWindSpeed"}
 DateTime CivilDuskStart "Sunset [%1$tH:%1$tM]" <sun> (gWeatherInfo_ForecastToday) {channel="astro:sun:11348b84:civilDusk#start"}
-
-
-
-

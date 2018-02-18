@@ -1,0 +1,10 @@
+// Ryan's Home
+Group   gHome                            "My House"   
+
+// Sensor Value Groups
+Group   gTemperature "Temperature"
+Group   gHumidity   "Humditiy"
+
+// NTP Server
+DateTime NTPServerDateTime"Date" {channel="ntp:ntp:local:dateTime"}
+String NTPServerString "Date" {channel="ntp:ntp:local:string"}

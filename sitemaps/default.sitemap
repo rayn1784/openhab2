@@ -13,7 +13,11 @@ sitemap default label="My Home" {
     Frame label="Ryan's Bedroom" icon="bedroom" {
         Default item=Bedroom_Temperature label="Temperature [%.1f °F]" icon="temperature"
         Default item=Bedroom_Humidity label="Humidity [%.1f %%]" icon="humidity"
-        Switch item=BedroomLight_ColorTemperature label="Bedroom Light" icon="light"
+        Switch item=BedroomLightsAll
+        Switch item=BedroomLightColorSwitch label="Bedroom Light" 
+        Switch item=BedroomClosetLightColorSwitch label="Closet Light" 
+        Group item=gR_BedroomLight icon="light"
+        Group item=gR_BedroomClosetLight icon="light"
     } 
     Frame label="Today's Forecast" {
         Default item=WeatherInformation_ForecastToday_MaximumTemperature label="Forecasted High Temp [%1.0f °F]" 

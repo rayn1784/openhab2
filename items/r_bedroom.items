@@ -1,0 +1,26 @@
+// Ryan's Bedroom Groups
+Group   gR_Bedroom                       "Ryan's Bedroom"        (gHome)
+Group   gR_BedroomSensors                "Bedroom Sensors" (gR_Bedroom)
+Group   gR_BedroomLights                 "Bedroom Lights Settings"    (gR_Bedroom)
+
+// Ryan's Bedoom Lights
+Group   gR_BedroomLight                  "Bedroom Light Settings"  (gR_BedroomLights)
+Group   gR_BedroomClosetLight            "Closet Light Settings" (gR_BedroomLights)
+
+// Mysensors Ryan's Bedroom
+Number Bedroom_Temperature "Temperature [%.1f °F]" <temperature> (gR_Bedroom, gTemperature) {channel="mysensors:temperature:f7d1827e:temperature_3_1:temp"}
+Number Bedroom_Humidity "Humidity [%.1f %%]" <humidity> (gR_Bedroom, gHumidity) {channel="mysensors:humidity:f7d1827e:humidity_3_0:hum"}
+
+//TP-Link Bedroom Light
+Switch BedroomLightColorSwitch "Switch" (gR_BedroomLight,gR_BedroomLightsSwitch) {channel="tplinksmarthome:lb130:04B4D4:color"}
+Dimmer BedroomLightBrightness "Brightness" <slider> (gR_BedroomLight)  {channel="tplinksmarthome:lb130:04B4D4:color"}
+Dimmer BedroomLightColorTemperature "Color Temperature [%d] K" <slider> (gR_BedroomLight) {channel="tplinksmarthome:lb130:04B4D4:colorTemperature"}
+Color  BedroomLightColor "Color" (gR_BedroomLight) {channel="tplinksmarthome:lb130:04B4D4:color"}
+Number BedroomLightRssi "Signal" (gR_BedroomLight) {channel="tplinksmarthome:lb130:04B4D4:rssi"}
+
+//TP-Link Bedroom Closet Light
+Switch BedroomClosetLightColorSwitch "Switch" (gR_BedroomClosetLight,gR_BedroomLightsSwitch) {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Dimmer BedroomClosetLightBrightness "Brightness" <slider> (gR_BedroomClosetLight)  {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Dimmer BedroomClosetLightColorTemperature "Color Temperature [%d] K" <slider> (gR_BedroomClosetLight) {channel="tplinksmarthome:lb130:CDCAE2:colorTemperature"}
+Color  BedroomClosetLightColor "Color" (gR_BedroomClosetLight) {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Number BedroomClosetLightRssi "Signal" (gR_BedroomClosetLight) {channel="tplinksmarthome:lb130:CDCAE2:rssi"}
