@@ -1,0 +1,13 @@
+//TP-Link Bedroom Light
+Switch      RBedroom_Light_ColorSwitch              "Switch"                                    (gRBedroom_Light)           {channel="tplinksmarthome:lb130:04B4D4:color"}
+Dimmer      RBedroom_Light_Brightness               "Brightness"                <slider>        (gRBedroom_Light)           {channel="tplinksmarthome:lb130:04B4D4:color"}
+Dimmer      RBedroom_Light_ColorTemperature         "Color Temperature [%d] K"  <slider>        (gRBedroom_Light)           {channel="tplinksmarthome:lb130:04B4D4:colorTemperature"}
+Color       RBedroom_Light_Color                    "Color"                                     (gRBedroom_Light)           {channel="tplinksmarthome:lb130:04B4D4:color"}
+Number      RBedroom_Light_Rssi                     "Signal Level"              <soundvolume>   (gRBedroom_Light)           {channel="tplinksmarthome:lb130:04B4D4:rssi"}
+
+//TP-Link Bedroom Closet Light
+Switch      RBedroom_ClosetLight_ColorSwitch        "Switch"                                    (gRBedroom_ClosetLight)     {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Dimmer      RBedroom_ClosetLight_Brightness         "Brightness"                <slider>        (gRBedroom_ClosetLight)     {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Dimmer      RBedroom_ClosetLight_ColorTemperature   "Color Temperature [%d] K"  <slider>        (gRBedroom_ClosetLight)     {channel="tplinksmarthome:lb130:CDCAE2:colorTemperature"}
+Color       RBedroom_ClosetLight_Color              "Color"                                     (gRBedroom_ClosetLight)     {channel="tplinksmarthome:lb130:CDCAE2:color"}
+Number      RBedroom_ClosetLight_Rssi               "Signal Level"              <soundvolume>   (gRBedroom_ClosetLight)     {channel="tplinksmarthome:lb130:CDCAE2:rssi"}

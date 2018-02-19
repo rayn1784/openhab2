@@ -1,29 +1,44 @@
 // Weather Groups
-Group   gWeatherInfo                     "Weather Information"   
-Group   gWeatherInfo_Current             "Current Weather Conditions"    (gWeatherInfo)
-Group   gWeatherInfo_ForecastToday       "Today's Weather Forecast"      (gWeatherInfo)
+Group       gWeather                                        "Weather Information"                   <sun_clouds>
+Group       gWeather_Current                                "Current Weather Conditions"            <sun_clouds>        (gWeather)
+Group       gWeather_Forecast_Today                         "Today's Weather Forecast"              <sun_clouds>        (gWeather)
+Group       gWeather_Forecast_Tomorrow                      "Tomorrow's Weather Forecast"           <sun_clouds>        (gWeather)
 
 // Wunderground Current Conditions
-String CurrentConditions "Current Conditions" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#conditions"}
-Number CurrentTemperature "Current Temperature [%.1f °F]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#temperature"}
-Number CurrentRelativeHumidity "Current Relative Humidity [%.1f %%]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#relativeHumidity"}
-String CurrentWindDirection "Current Wind Direction" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windDirection"}
-Number CurrentWindSpeed "Current Wind Speed [%1.0f MPH]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windSpeed"}
-Number CurrentWindGust "Current Wind Gust [%1.0f MPH]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#windGust"}
-Number CurrentPressure "Current pressure" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#pressure"}
-Number CurrentFeelingTemperature "Current Feeling Temperature [%.1f °F]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#feelingTemperature"}
-Number CurrentVisibility "Current Visibility" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#visibility"}
-Number CurrentPrecipitationDay "Current Precipitation Today [%.01f inches]" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#precipitationDay"}
-Image CurrentIcon "Current icon" (gWeatherInfo_Current) {channel="weatherunderground:weather:410d1a38:current#icon"}
+String      Weather_Current_Conditions                      "Conditions"                                                (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#conditions"}
+Number      Weather_Current_Temperature                     "Temperature [%.1f °F]"                 <temperature>       (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#temperature"}
+Number      Weather_Current_FeelingTemperature              "Feels Like [%.1f °F]"                  <temperature>       (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#feelingTemperature"}
+String      Weather_Current_WindDirection                   "Wind Direction"                        <wind>              (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#windDirection"}
+Number      Weather_Current_WindSpeed                       "Wind Speed [%1.0f MPH]"                <wind>              (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#windSpeed"}
+Number      Weather_Current_WindGust                        "Wind Gust [%1.0f MPH]"                 <wind>              (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#windGust"}
+Number      Weather_Current_PrecipitationDay                "Total Rainfall [%.01f inches]"         <rain>              (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#precipitationDay"}
+Number      Weather_Current_Pressure                        "Atmospheric Pressure"                  <pressure>          (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#pressure"}
+Number      Weather_Current_RelativeHumidity                "Relative Humidity [%.1f %%]"           <humidity>          (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#relativeHumidity"}
+Number      Weather_Current_Visibility                      "Visibility [%1.0f Miles]"                                  (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#visibility"}
+DateTime    Weather_Current_ObservationTime                 "Current observation time"              <time>              (gWeather_Current)              {channel="weatherunderground:weather:410d1a38:current#observationTime"}
 
-// Wunderground Today's Forecast
-String ForecastTodayConditions "Conditions" (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#conditions"}
-DateTime CivilDawnStart "Sunrise [%1$tH:%1$tM]" <sun> (gWeatherInfo_ForecastToday) {channel="astro:sun:11348b84:civilDawn#start"}
-Number ForecastTodayMinTemperature "Min Temperature [%.1f °F]" <temperature> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#minTemperature"}
-Number ForecastTodayMaxTemperature "Max Temperature [%.1f °F]" <temperature> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#maxTemperature"}
-Number ForecastTodayRelativeHumidity "Relative Humidity [%.1f %%]" <humidity> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#relativeHumidity"}
-Number ForecastTodayProbaPrecipitation "Precipitation Chance [%1.0f %%]" <rain> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#probaPrecipitation"}
-Number ForecastTodayPrecipitationDay "Expected Rainfall [%.01f inches]" <rain> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#precipitationDay"}
-Number ForecastTodayAverageWindSpeed "Average Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#averageWindSpeed"}
-Number ForecastTodayMaxWindSpeed "Max Wind Speed [%1.0f MPH]" <wind> (gWeatherInfo_ForecastToday) {channel="weatherunderground:weather:410d1a38:forecastToday#maxWindSpeed"}
-DateTime CivilDuskStart "Sunset [%1$tH:%1$tM]" <sun> (gWeatherInfo_ForecastToday) {channel="astro:sun:11348b84:civilDusk#start"}
+// Wunderground Forecast Today
+DateTime    Weather_Forecast_Today_ForecastTime             "Today's Forecast:"                     <time>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#forecastTime"}
+String      Weather_Forecast_Today_Conditions               "Forecast Conditions"                                       (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#conditions"}
+Number      Weather_Forecast_Today_MaxTemperature           "Max Temperature [%.1f °F]"             <temperature>       (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#maxTemperature"}
+Number      Weather_Forecast_Today_MinTemperature           "Min Temperature [%.1f °F]"             <temperature>       (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#minTemperature"}
+Number      Weather_Forecast_Today_ProbaPrecipitation       "Precipitation Chance [%1.0f %%]"       <rain>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#probaPrecipitation"}
+Number      Weather_Forecast_Today_PrecipitationDay         "Expected Rainfall [%.01f inches]"      <rain>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#precipitationDay"}
+String      Weather_Forecast_Today_MaxWindDirection         "Wind direction"                        <wind>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#maxWindDirection"}
+Number      Weather_Forecast_Today_AverageWindSpeed         "Average Wind Speed [%1.0f MPH]"        <wind>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#averageWindSpeed"}
+Number      Weather_Forecast_Today_MaxWindSpeed             "Max Wind Speed [%1.0f MPH]"            <wind>              (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#maxWindSpeed"}
+Number      Weather_Forecast_Today_RelativeHumidity         "Relative Humidity [%.1f %%]"           <humidity>          (gWeather_Forecast_Today)       {channel="weatherunderground:weather:410d1a38:forecastToday#relativeHumidity"}
+DateTime    Sun_CivilDawnStart                              "Sunrise [%1$tH:%1$tM]"                 <sun>               (gWeather_Forecast_Today)       {channel="astro:sun:11348b84:civilDawn#start"}
+DateTime    Sun_CivilDuskStart                              "Sunset [%1$tH:%1$tM]"                  <sun>               (gWeather_Forecast_Today)       {channel="astro:sun:11348b84:civilDusk#start"}
+
+// Wunderground Forecast Tomorrow
+DateTime    Weather_Forecast_Tomorrow_ForecastTime          "Forecast Time"                        <time>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#forecastTime"}
+String      Weather_Forecast_Tomorrow_Conditions            "Forecast Conditions"                                       (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#conditions"}
+Number      Weather_Forecast_Tomorrow_MaxTemperature        "Max Temperature [%.1f °F]"            <temperature>        (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#maxTemperature"}
+Number      Weather_Forecast_Tomorrow_MinTemperature        "Min Temperature [%.1f °F]"            <temperature>        (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#minTemperature"}
+Number      Weather_Forecast_Tomorrow_ProbaPrecipitation    "Precipitation Chance [%1.0f %%]"      <rain>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#probaPrecipitation"}
+Number      Weather_Forecast_Tomorrow_PrecipitationDay      "Expected Rainfall [%.01f inches]"     <rain>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#precipitationDay"}
+String      Weather_Forecast_Tomorrow_MaxWindDirection      "Wind direction"                       <wind>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#maxWindDirection"}
+Number      Weather_Forecast_Tomorrow_AverageWindSpeed      "Average Wind Speed [%1.0f MPH]"       <wind>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#averageWindSpeed"}
+Number      Weather_Forecast_Tomorrow_MaxWindSpeed          "Max Wind Speed [%1.0f MPH]"           <wind>               (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#maxWindSpeed"}
+Number      Weather_Forecast_Tomorrow_RelativeHumidity      "Relative Humidity [%.1f %%]"          <humidity>           (gWeather_Forecast_Tomorrow)    {channel="weatherunderground:weather:410d1a38:forecastTomorrow$#relativeHumidity"}

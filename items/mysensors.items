@@ -1,0 +1,4 @@
+// Mysensors Ryan's Bedroom
+Number      RBedroom_Temperature    "Temperature [%.1f °F]"    <temperature>    (gRBedroom, gTemperature)   {channel="mysensors:temperature:f7d1827e:temperature_3_1:temp"}
+Number      RBedroom_Humidity       "Humidity [%.1f %%]"       <humidity>       (gRBedroom, gHumidity)      {channel="mysensors:humidity:f7d1827e:humidity_3_0:hum"}
+

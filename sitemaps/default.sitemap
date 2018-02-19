@@ -1,34 +1,28 @@
 
 sitemap default label="My Home" {
-    Frame label="Broken Arrow, OK 74011" icon="garden" {
-        Default item=CurrentConditions label="Current Conditions" 
-        Default item=CurrentTemperature label="Temperature [%.1f °F]" icon="temperature"
-        Default item=CurrentFeelingTemperature label="Feels like [%.1f °F]" icon="temperature"
-        Default item=CurrentRelativeHumidity label="Relative Humidity [%.1f %%]" icon="humidity"
-        Default item=CurrentWindSpeed label="Wind Speed [%1.0f MPH]" icon="wind"
-        Default item=CurrentPrecipitationDay label="Rain Fall Today [%.01f inches]" icon="rain"
-        Group item=gWeatherInfo_ForecastToday label="Weather Forecast for Today" icon="sun_clouds"
-    }    
-    
-    Frame label="Ryan's Bedroom" icon="bedroom" {
-        Default item=Bedroom_Temperature label="Temperature [%.1f °F]" icon="temperature"
-        Default item=Bedroom_Humidity label="Humidity [%.1f %%]" icon="humidity"
-        Switch item=BedroomLightsAll
-        Switch item=BedroomLightColorSwitch label="Bedroom Light" 
-        Switch item=BedroomClosetLightColorSwitch label="Closet Light" 
-        Group item=gR_BedroomLight icon="light"
-        Group item=gR_BedroomClosetLight icon="light"
-    } 
-    Frame label="Today's Forecast" {
-        Default item=WeatherInformation_ForecastToday_MaximumTemperature label="Forecasted High Temp [%1.0f °F]" 
-        Default item=WeatherInformation_ForecastToday_MinimumTemperature label="Forecasted Low Temp [%1.0f °F]"
-        Default item=WeatherInformation_ForecastToday_PrecipitationProbability label="Precipitation Chance [%1.0f %%]"
-        Default item=WeatherInformation_ForecastToday_RainFallDay label="Forecasted Rain Fall [%.01f inches]"
-        Default item=AstroSunData_CivilDusk_StartTime label="Sunset [%1$tH:%1$tM]"
+    Frame label="Current Weather Conditons" icon="garden" {
+        Default item=Weather_Current_Conditions                     label="Conditions" 
+        Default item=Weather_Current_Temperature                    label="Temperature [%.1f °F]"               icon="temperature"
+        Default item=Weather_Current_FeelingTemperature             label="Feels like [%.1f °F]"                icon="temperature"
+        Group   item=gWeather_Current                               label="Detailed Conditions"    
     }
-    Frame label="House Presence Detection" {
-        Switch item=DeanetteSPhone_Online label="Deanette Phone Online"
-        Switch item=DickrPhone_Online label="Ryan Phone Online" 
+    Frame label="Today's Weather Forecast"  icon="garden" {
+        Default item=Weather_Forecast_Today_MaxTemperature          label="Max Temperature [%.1f °F]" 
+        Default item=Weather_Forecast_Today_MinTemperature          label="Min Temperature [%.1f °F]"
+        Default item=Weather_Forecast_Today_ProbaPrecipitation      label="Precipitation Chance [%1.0f %%]"
+        Default item=Weather_Forecast_Today_PrecipitationDay        label="Expected Rainfall [%.01f inches]"
+        Group   item=gWeather_Forecast_Today                        label="Detailed Forecast" 
+    }   
+    Frame label="Ryan's Bedroom" icon="bedroom" {
+        Default item=RBedroom_Temperature                           label="Temperature [%.1f °F]"               icon="temperature"
+        Default item=RBedroom_Humidity                              label="Humidity [%.1f %%]"                  icon="humidity"
+        Switch  item=RBedroom_Light_ColorSwitch                     label="Bedroom Light" 
+        Switch  item=RBedroom_ClosetLight_ColorSwitch               label="Closet Light" 
+        Group   item=gRBedroom_Lights                               label="Light Settings" 
+     } 
+    Frame label="Presence Detection" {
+        Switch item=netPingDeanetteSPhone                           label="Deanette Phone Online"               icon="presence"
+        Switch item=netPingDickrPhone                               label="Ryan Phone Online"                   icon="presence"
     }
 }
 

@@ -1,10 +1,19 @@
-// Ryan's Home
-Group   gHome                            "My House"   
+// Ryan's Home Group
+Group       gHome                   "My House"   
+
+// Ryan's Bedroom Groups
+Group       gRBedroom               "Ryan's Bedroom"                            (gHome)
+Group       gRBedroom_Sensors       "Bedroom Sensors"                           (gRBedroom)
+Group       gRBedroom_Lights        "Bedroom Lights Settings"   <settings>      (gRBedroom)
+
+// Ryan's Bedoom Lights
+Group       gRBedroom_Light         "Bedroom Light"             <light>         (gRBedroomLights)
+Group       gRBedroom_ClosetLight   "Closet Light"              <light>         (gRBedroomLights)
 
 // Sensor Value Groups
-Group   gTemperature "Temperature"
-Group   gHumidity   "Humditiy"
+Group       gTemperature            "Temperature"
+Group       gHumidity               "Humditiy"
 
 // NTP Server
-DateTime NTPServerDateTime"Date" {channel="ntp:ntp:local:dateTime"}
-String NTPServerString "Date" {channel="ntp:ntp:local:string"}
+DateTime    NTPServer_DateTime      "NTP DateTime"                                                      {channel="ntp:ntp:local:dateTime"}
+String      NTPServer_String        "NTP DateString"                                                    {channel="ntp:ntp:local:string"}
